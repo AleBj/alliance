@@ -69,6 +69,8 @@ dist/
 
 # Ignore local vscode settings
 .vscode
+#video
+*.mp4
 
 # DS Store
 .DS_Store
