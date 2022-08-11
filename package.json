@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build-windows": "webpack --env NODE_ENV=development --config webpack.prod.js && ./build-windows.sh",
     "build": "webpack --env NODE_ENV=development --config webpack.prod.js && ./build.sh",
     "dev": "webpack-dev-server  --env NODE_ENV=development --config webpack.dev.js"
   },
