@@ -1,0 +1,20 @@
+@import '../variables.scss';
+@import '../util/breakpoints.scss';
+
+.line-animated{
+    display: inline-block;
+    position: relative;
+    @include respond-to('tablet'){
+        display: inline
+    }
+    &:after{
+        content: '';
+        width:0%;
+        height: 2px;
+        background: $red;
+        position: absolute;
+        bottom:-1px;left: 0;
+        transition: $curve .4s;
+    }
+    &.view::after{width: 100%;}
+}

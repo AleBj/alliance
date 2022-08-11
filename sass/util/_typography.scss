@@ -1,0 +1,62 @@
+.title-h1, .title-h1 div {
+  font-family: $font-title;
+  font-weight: 800;
+  font-size: 107px;
+  letter-spacing: -0.04em;
+  @include respond-to('desktop'){
+    font-size: 86px;
+  }
+  @include respond-to('tablet'){
+    font-size: 46px;
+  }
+}
+.title-h2, .title-h2 div  {
+  font-family: $font-title;
+  font-size: 70px;
+  font-weight: 800;
+  letter-spacing: -0.024em;
+  span{font-weight: 300;}
+  @include respond-to('desktop'){
+    font-size: 56px;
+  }
+  @include respond-to('tablet'){
+    font-size: 30px;
+  }
+}
+.title-h3, .title-h3 > div {
+  font-family: $font-title;
+  font-size: 37px;
+  font-weight: 800;
+  letter-spacing: -0.024em;
+  @include respond-to('desktop'){
+    font-size: 29px;
+  }
+  @include respond-to('tablet'){
+    font-size: 20px;
+  }
+}
+.title-h4, .title-h4 > div {
+  font-family: $font-title;
+  font-size: 47px;
+  font-weight: 800;
+  letter-spacing: -0.024em;
+  @include respond-to('desktop'){
+    font-size: 40px;
+  }
+  @include respond-to('tablet'){
+    font-size: 26px;
+  }
+}
+
+.paragraph {
+  font-family: $font-normal;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.024em;
+  @include respond-to('desktop'){
+    font-size: 16px;
+  }
+  @include respond-to('tablet'){
+      opacity: 0;
+  }
+}

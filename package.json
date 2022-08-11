@@ -1,0 +1,42 @@
+{
+  "name": "gbv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --env NODE_ENV=development --config webpack.prod.js && ./build.sh",
+    "dev": "webpack-dev-server  --env NODE_ENV=development --config webpack.dev.js"
+  },
+  "author": "Elkanodata",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-classes": "^7.18.4",
+    "@babel/preset-env": "^7.18.2",
+    "@webpack-cli/serve": "^1.6.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "sass-loader": "^7.2.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
+    "@babel/plugin-transform-runtime": "^7.18.2",
+    "axios": "^0.27.2",
+    "babel-polyfill": "^6.26.0",
+    "gsap": "^3.10.4",
+    "normalize-wheel": "^1.0.1",
+    "promise-polyfill": "8.2.3",
+    "sass": "^1.52.1"
+  }
+}

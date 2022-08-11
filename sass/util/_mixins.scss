@@ -1,0 +1,144 @@
+@mixin importFont($fontname, $filename, $weight, $style: normal) {
+  @font-face {
+    font-family: $fontname; // IE9 Compat Modes
+    font-display: swap;
+    src: url('../../assets/fonts/#{$filename}.woff') format('woff'), // Safari, Android, iOS
+    url('../../assets/fonts/#{$filename}.woff2') format('woff2'); // Legacy iOS
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+@mixin underline() {
+  position: relative;
+  &::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: 0% 0%;
+    transition: transform 1s cubic-bezier(0.49, 0.23, 0, 1);
+  }
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+@mixin container () {
+  width: calc(100% - 120px * 2);
+  margin-left: auto;
+  margin-right: auto;
+  @include respond-to('desktop-medium') {
+    width: calc(100% - 90px * 2);
+  }
+  @include respond-to('desktop') {
+    width: calc(100% - 20px * 2);
+  }
+}
+@mixin fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  &.show {
+    opacity: 1;
+  }
+}
+@mixin fade-in-y {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 1s ease-in, transform 1s cubic-bezier(0.26, 0.1, 0, 1);
+  &.show {
+    opacity: 1;
+    transform: none;
+  }
+}
+@mixin scale-title {
+  * {
+    font-weight: inherit;
+  }
+  .word, .letter {
+    display: inline-block;
+  }
+  .letter {
+    will-change: transform;
+    transition: transform 2s cubic-bezier(0.26, 0.1, 0, 1), opacity 1.5s cubic-bezier(0.26, 0.1, 0, 1);
+    &.space {
+      width: 0.12em;
+    }
+  }
+  @for $i from 1 to 50 {
+    @for $j from 1 to 50 {
+      .word:nth-child(#{$i}) {
+        .letter:nth-child(#{$j}) {
+          transition-delay: random() * 0.6s;
+        }
+      }
+    }
+  }
+  &:not(.show) {
+    .word {
+      .letter {
+        opacity: 0;
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+@mixin scroll-progress($value) {
+  html[data-scroll-progress='#{value}'] & {
+    @content;
+  }
+}
+@mixin chrome {
+  html[data-browser='chrome'] & {
+    @content;
+  }
+}
+@mixin safari {
+  html[data-browser='safari'] & {
+    @content;
+  }
+}
+@mixin safari-mobile {
+  html[data-browser='safari-mobile'] & {
+    @content;
+  }
+}
+@mixin edge {
+  html[data-browser='edge'] & {
+    @content;
+  }
+}
+@mixin firefox {
+  html[data-browser='firefox'] & {
+    @content;
+  }
+}
+@mixin ie {
+  html[data-browser='ie'] & {
+    @content;
+  }
+}
+@mixin theme($name) {
+  html[data-theme='#{$name}'] & {
+    @content;
+  }
+}
+@mixin osx {
+  html[data-os='osx'] & {
+    @content;
+  }
+}
+@mixin windows {
+  html[data-os='windows'] & {
+    @content;
+  }
+}
+@mixin is-touch {
+  html[data-touch='true'] & {
+    @content;
+  }
+}

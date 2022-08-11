@@ -1,0 +1,109 @@
+@import '../variables.scss';
+@import '../util/mixins.scss';
+@import '../util/breakpoints.scss';
+
+.join{
+    padding-top: 350px;
+    position: relative;
+    &:after{
+        content: '';
+        height: 400px;
+        position: absolute;
+        width: 100%;
+        background-image: url('../../assets/img/grid.svg');
+        z-index: -1;
+        top:10%
+    }
+    .small-container{
+        display: flex;
+        align-items: center;   
+        h3{
+            width: 50%;
+            line-height: .8;
+            transform: translateY(-100%);
+            & .line-animated::after{
+                bottom: -7px;
+            }
+        }
+        p{
+            font-size: 26px;
+            line-height: 1.4;
+            max-width: 660px;
+        }
+    }
+    @include respond-to('tablet'){
+        padding-top: 150px;  
+        &:after{
+            height: 200px;
+
+        }   
+        .small-container{
+            flex-direction: column;
+            h3{
+                width: 100%;
+                transform: translateY(-20%);
+            }
+            p{
+                font-size: 20px;
+                max-width: 100%;
+            }
+        }
+        
+    }
+}
+.our__boxes{
+    margin:120px 0;
+}
+.innovation{
+    height: 500px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    &__title{
+        position: relative;
+        padding-right: 380px;
+        font-weight: 400;
+        strong{
+            font-size: 60px;
+            position: absolute;
+            top: -20px;
+            left: 198px;
+        }
+    }
+    &__grid{
+        position: absolute;
+        width: 40%;
+        padding-top: 40%;
+        background-image: url('../../assets/img/grid.svg');
+        z-index: -1;
+        right: 20%;
+        bottom: 20%;
+    }
+    @include respond-to('tablet'){
+        height: 300px;
+        align-items: center;
+        &__title{
+            padding: 0;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 30px;
+            strong{
+                width: 100%;
+                font-size: 30px;
+                position: absolute;
+                top: auto;
+                bottom:0;
+                left: 0;
+            }
+        }
+        &__grid{
+            position: absolute;
+            width: 80%;
+            padding-top: 60%;
+            background-image: url('../../assets/img/grid.svg');
+            z-index: -1;
+            right: 0%;
+            bottom: 50%;
+        }
+    }
+}

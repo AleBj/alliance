@@ -1,0 +1,166 @@
+@import '../variables.scss';
+@import '../util/breakpoints.scss';
+
+.header_page{
+  position: fixed;
+  top:0;
+  width: 100%;
+  background-color: $black;
+  color: $white;
+  z-index: 9;
+  & > .container{display: flex;align-items: center;justify-content: space-between;}
+  &--nav{
+    & > ul{
+      display: flex;
+      font-size: 17px;
+      & > li{
+        margin-left: 60px;
+        position: relative;
+        padding:40px 0 35px;
+        cursor: pointer;
+        & a{transition: $curve .4s;}        
+        & > svg{margin-left: 5px;}
+        &:hover > .header_page--nav_submenu{top:calc(100% - 34px);opacity: 1;pointer-events: initial;}
+        &.active{
+          span{font-weight: 500;}
+          &::after{
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background-color: $red;
+            left: 0;bottom: 0;
+          }
+          @include respond-to('tablet'){
+            &::after{
+              opacity: 0;
+              height: 0px;
+            }
+
+          }
+        }
+        &:not(.active):hover{
+          & > a{color: $red;}
+          span{font-weight: 500;}
+        }
+      }
+    }
+    &_submenu{
+      position: absolute;
+      background-color: $black;
+      padding:40px 50px;
+      white-space: nowrap;
+      left: -50px;top:100%;
+      transition: $curve .4s;
+      opacity: 0;
+      pointer-events: none;
+      & > li{
+        padding: 7px 0;
+        transition: $curve .4s;
+        & a.active,
+        &:hover{color:$red}
+      }
+    }
+  }
+  @include respond-to('tablet'){
+    padding: 14px 0;
+    &--logo svg{max-width: 120px;}
+    &--nav{
+      opacity: 0;
+      padding: 10px 0 40px;
+      max-height: calc(100vh - 68px);
+      overflow: auto;
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 68px;
+      background-color: black;
+      & > ul{
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+        & > li{
+          margin-left: 0px;
+          padding:20px 20px 15px;
+          &.active{
+            span{font-weight: 500;}
+            &::after{
+              content: '';
+              position: absolute;
+              height: 3px;
+              width: 100%;
+              background-color: $red;
+              left: 0;bottom: 0;
+            }
+          }
+          &:not(.active):hover{
+            & > a{color: $red;}
+            span{font-weight: 500;}
+          }
+        }
+      }
+      &_submenu{
+        position: static;
+        background-color: $black;
+        padding:10px 20px;
+        white-space: nowrap;
+        left: -50px;top:100%;
+        opacity:1;
+        pointer-events: initial;
+        & > li{
+          padding: 7px 0;
+          transition: $curve .4s;
+          &:hover{color:$red}
+        }
+      }
+      pointer-events: none;
+      & *{
+        pointer-events: none;
+      }
+      &.close{
+        pointer-events: initial;
+        & *{
+          pointer-events: initial;
+        }
+
+      }
+    }
+  }
+}
+
+
+
+#burger{
+  display: none;
+  appearance: none;
+  padding: 0;margin: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  @include respond-to('tablet'){
+    width: 30px;
+    height: 30px;
+    display: flex;
+    padding: 8px 0;
+    flex-direction: column;
+    justify-content: space-between;
+    &:before, &:after, i{
+      content: '';
+      width: 100%;
+      background-color: $red;
+      display: block;
+      height: 2px;
+    }
+    &.close{
+      justify-content: center;
+      &::before{
+        transform: rotate(45deg);
+      }
+      &::after{
+        transform: rotate(-45deg);
+        margin-top: -2px;
+      }
+      i{display: none;}
+    }
+  }
+}

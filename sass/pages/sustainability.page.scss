@@ -1,0 +1,74 @@
+@import '../variables.scss';
+@import '../util/mixins.scss';
+@import '../util/breakpoints.scss';
+
+.heroAbout{
+    margin-bottom: 150px;
+    h1{
+        max-width: 640px;transform: translateY(-20%);
+        .lineParent {
+            overflow: hidden;
+            padding-bottom: 10px;
+        }
+    }
+    figure{
+        width: 65%;
+    }
+    @include respond-to('tablet'){
+        margin-bottom: 70px;
+        .container{padding-bottom: 60px;}
+        figure{
+            width: 100%;
+        }
+    }
+}
+.actions{
+    padding: 100px 0 50px;
+    &__bg{
+        max-width: 80%;
+        right: -20%;
+        top:42%;
+        position: absolute;
+        z-index: -1;
+    }
+    .action{
+        display: flex;
+        margin-bottom: 80px;
+        &__title{
+           min-width: 550px;
+           position: relative;
+           i{
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #ff4d4d;
+            margin-top: 60px;
+           }
+        }
+        &__text{
+            margin-top: 30px;
+            font-size: 26px;
+            line-height: 1.4;
+        }
+    }
+    @include respond-to('tablet'){
+        .action{
+            flex-direction: column;
+            margin-bottom: 40px;
+            &__title{
+               min-width: 100%;
+               margin-bottom: 20px;
+               i{
+                width: 80px;
+                height: 2px;
+                margin-top: 0px;
+               }
+            }
+            &__text{
+                margin-top: 0px;
+                font-size: 18px;
+                line-height: 1.4;
+            }
+        }
+    }
+}

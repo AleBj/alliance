@@ -1,0 +1,13 @@
+@import '../variables.scss';
+@import '../util/breakpoints.scss';
+.ball{
+    width: 10px;
+    height:10px;
+    border-radius: 100%;
+    background:$red;
+    position: fixed;
+    pointer-events: none;
+    @include respond-to('tablet'){
+        opacity: 0;
+    }
+}

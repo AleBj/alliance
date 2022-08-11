@@ -1,0 +1,17 @@
+.container, .small-container{
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+  max-width: 1500px;
+  width: calc(100% - 80px);
+}
+.small-container {
+  max-width: 1180px;
+  width: calc(100% - 100px);
+}
+@include respond-to('tablet'){
+  .container,.small-container{
+    width: calc(100% - 40px);
+  }
+}

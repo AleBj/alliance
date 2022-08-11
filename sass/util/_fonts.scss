@@ -1,0 +1,7 @@
+
+@import 'mixins.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+@include importFont('Moderat', 'Moderat-Extended-Light', 300);
+@include importFont('Moderat', 'Moderat-Extended-Black', 800);

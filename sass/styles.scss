@@ -1,0 +1,93 @@
+@import './variables.scss';
+@import './util/normalize.scss';
+@import './util/mixins.scss';
+@import './util/breakpoints.scss';
+@import './util/grid.scss';
+@import './util/fonts.scss';
+@import './util/typography.scss';
+@import './util/animations.scss';
+@import './components/footer.scss';
+@import './components/nav.scss';
+@import './components/menu.scss';
+@import './components/header.scss';
+@import './components/hero.scss';
+@import './components/hero-solutions.scss';
+@import './components/hero-about.scss';
+@import './components/button-single.scss';
+@import './components/solutions-home.scss';
+@import './components/contact-foo.scss';
+@import './components/future-building.scss';
+@import './components/our-boxes.scss';
+@import './components/line-animated.scss';
+@import './components/cursor-ball.scss';
+@import './components/popup.scss';
+
+*{
+  font-smooth: almays;
+  text-shadow: 0px 0px 1px transparent;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+@-moz-document url-prefix() {
+  body {
+    font-weight: lighter !important;
+  }
+}
+body, html{
+  width: 100%;
+  height: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  margin: 0;
+  padding: 0;
+  font-family: $font-normal;
+  user-select: none;
+  -ms-user-select: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+a{text-decoration: none;color: inherit}
+.fade-in{
+  @include fade-in();
+}
+.fade-in-y {
+  @include fade-in-y();
+}
+.title-split,
+.title-split-solutions{overflow: hidden;padding-bottom: 30px;}
+.figure-appear{
+  height: 110%;
+  overflow: hidden;
+  width: 0;
+  position: relative; 
+}
+#smooth-wrapper {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
+  top:0;
+}
+h1,h2,h3,h5,h6,p{margin: 0;}
+ul,ol,li{list-style:none;padding: 0;margin: 0;}
+span{font-weight: inherit;}
+input,textarea,button,select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

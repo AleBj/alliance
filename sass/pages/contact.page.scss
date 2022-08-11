@@ -1,0 +1,158 @@
+@import '../variables.scss';
+@import '../util/mixins.scss';
+@import '../util/breakpoints.scss';
+
+.bodyContact{
+    display: flex;
+    align-items: center;
+    padding-top: 200px;
+    &__cols{
+        width: calc(50% - 80px);
+        position: relative;
+        &.form{margin: auto;}
+        &__image{
+            img{display: block;}
+        }
+        & h1{
+            max-width: 630px;
+            line-height: .84;
+            margin-bottom: 60px;
+            transform: translateX(-140px);
+        }
+        & p{
+            font-size: 22px;
+            line-height: 1.9;
+            span{color:#7A8A91;white-space: nowrap;}
+            a{
+                transition: ease-in-out 0.3s;
+                &:hover{
+                    color:$red;
+                    text-decoration: underline;
+                }
+            }
+        }
+        & .title-h3{margin-top: 60px;margin-bottom: 40px;}
+        & .message-ok{
+            position: absolute;
+            left: 50%;
+            bottom: 250px;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: $font-title;
+            font-size: 25px;
+            opacity: 0;
+            font-weight: 600;
+            width: 90%;
+        }
+    }
+    &__form{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &--input{
+            width: calc(50% - 20px);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            position: relative;
+            & > svg{
+                position: absolute;
+                right: 10px;
+                top:30px;
+                transform: rotate(90deg);
+                pointer-events: none;
+                @include respond-to('tablet'){
+                    top:0px
+                }
+            }
+            &.full{width: 100%;}
+            label{
+                font-size: 17px;
+                color:#000;
+            }
+            input,select, textarea{
+                appearance: none;
+                background: transparent;
+                outline: none;
+                resize: none;
+                border:0;
+                height: 100%;
+                width: 100%;
+                display: block;
+                border-radius: 0;
+                border-bottom:1px solid #D6E0E5;
+            }
+            button{
+                appearance: none;
+                background: transparent;
+                outline: none;
+                resize: none;
+                border:0;
+                padding: 0;
+                margin-left: auto;
+                color: $black;
+            }
+        }
+    }
+    @include respond-to('tablet'){
+        flex-direction: column;
+        padding-top: 80px;
+        &__cols{
+            width: 100%;
+            & > img{display: none !important;}
+            &__image{
+                img{
+                    max-height: 500px;
+                    min-width: 100%;
+                }
+            }             
+            &.form{padding: 20px;}
+            h1 {
+                max-width: 100%;
+                margin-bottom: 20px;
+                transform: translateX(00px);
+            }
+            .title-h3 {
+                margin-top: 60px;
+                margin-bottom: 20px;
+            }
+            p {font-size: 16px; span{white-space: initial;}}
+        }
+        &__form{
+            &--input{
+                width: 100%;
+                height: auto;
+                display: flex;
+                align-items: center;
+                margin: 20px 0;
+                label{
+                    font-size: 14px;
+                    color:#000;
+                }
+                input,select, textarea{
+                    appearance: none;
+                    background: transparent;
+                    outline: none;
+                    resize: none;
+                    border:0;
+                    height: 100%;
+                    width: 100%;
+                    display: block;
+                    border-radius: 0;
+                    border-bottom:1px solid #D6E0E5;
+                }
+                button{
+                    appearance: none;
+                    background: transparent;
+                    outline: none;
+                    resize: none;
+                    border:0;
+                    padding: 0;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}

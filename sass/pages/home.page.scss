@@ -1,0 +1,52 @@
+@import '../variables.scss';
+@import '../util/mixins.scss';
+@import '../util/breakpoints.scss';
+
+.about{
+    min-height: 600px;
+    max-height: 700px;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    &--image-float{
+        position: absolute;
+        z-index: -1;
+        left: 70%;top:50%;
+        transform: translateY(-50%);
+    }
+    .small-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+        h5{
+            font-size: 26px;
+            color:$red;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 35px;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 990px;
+            margin-bottom: 90px;
+        }
+    }
+    @include respond-to('tablet'){
+        padding: 50px 0;
+        max-height: none;
+        min-height: auto;
+        height: 500px;
+        .small-container{
+            h5{
+                font-size: 18px;
+                margin-bottom: 14px;
+            }
+            p{
+                font-size: 22px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

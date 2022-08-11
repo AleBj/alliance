@@ -1,0 +1,24 @@
+[
+  {
+    "image":"./assets/img/hero.jpg",
+    "title":"Un futuro más seguro para su empresa",
+    "text":"Creamos la solución 360 en seguridad, la gestión del riesgo y protección de activos para empresas",
+    "cta":"Descubra Alliance",
+    "link":"./nosotros.html"
+  },
+  {
+    "image":"./assets/img/hero_oil.jpg",
+    "title":"Proteja el futuro de su empresa",
+    "text":"Creamos la solución 360 para la seguridad, gestión del riesgo y protección del sector Oil & Gas",
+    "cta":"Ver Solución",
+    "link":"./solutions-oilgas.html"
+  },
+  {
+    "video":"./assets/video/home-loop.mp4",
+    "image":"",
+    "title":"Vemos lo que otros no ven",
+    "text":"Llegó a Colombia Alliance Risk & Protection, nacimos para que su empresa nunca se detenga.",
+    "cta":"Ver Manifiesto",
+    "link":"./nosotros.html"
+  }  
+]

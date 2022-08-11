@@ -1,0 +1,185 @@
+@import '../variables.scss';
+@import '../util/breakpoints.scss';
+
+.foo{
+  background-color: $grey;
+  padding: 80px 0;
+  overflow: hidden;
+  position: relative;
+  a{
+    transition:$curve 0.4s;
+    &.active,
+    &:hover{
+      color: $red;
+    }
+  }
+  &::after{
+    position: absolute;
+    z-index: 0;
+    content:''; 
+    background-image:url('../../assets/img/sv.png');
+    right: 0;top:0;
+    height: 100%;
+    width: 50%;
+    background-size:cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+  .container{position: relative;z-index: 1;}
+  &__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--logo{
+      display: flex;
+      align-items: flex-start;
+      strong{
+        display: block;
+        font-family: $font-title;
+        font-size: 18px;
+        font-weight: 700;
+        color: #181a1e;
+        letter-spacing: -0.03em;
+      }
+      & svg{margin-bottom: 10px;width: auto;height: 47px;}
+      & .logo-alliance{margin-right: 40px;}
+      & .logos-iso{margin-left: 25px;}
+    }
+    &--qr{
+      display: flex;
+      align-items: center;
+      small{
+        font-family: $font-title;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+      & > img{max-width: 93px;margin-left: 20px;}
+    }
+    &--nav{
+      margin: 70px 0 40px;
+      strong{display: block;margin-bottom: 20px;}
+      ul li{font-size: 15px;line-height: 1.5;margin-bottom: 3px;}
+      & .col{
+        margin-right: 50px;
+        float: left;
+        &__country{
+          float: right;
+          margin-right: 0;
+          margin-left: 60px;
+          li{
+            min-height: 30px;
+            line-height: 1.4;
+            font-size: 14px;
+            a{text-decoration: underline;}
+          }
+        }
+      }
+      &:after{content: '';clear: both;display: block;}
+    }
+    &--rrss{
+      a{margin-left: 10px;font-size: 24px;}
+    }
+  }
+
+  @include respond-to('tablet'){
+    padding: 80px 0;
+    &__top{
+      &--logo{
+        flex-wrap: wrap;
+        svg{
+          max-width: 150px;
+          height: auto;
+          margin-bottom: 0px;
+        }
+        span{font-size: 12px;}
+        & .logos-iso{
+          margin:20px auto 0;
+        }
+        & .logo-alliance{margin-right: 0px;width: 100%;}
+      }
+      &--qr{
+        display: none;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        img{margin-left: 0;margin-bottom: 10px;}
+        small{font-size: 12px;}
+      }
+      &--nav{
+        margin-top: 50px;
+        & .col{
+          &:nth-child(2){padding-left: 20px;}
+          margin-right: 0px;
+          width: 50%;
+          &__country{
+            width: 100%;
+            margin-left: 0px;
+            margin: 20px 0;
+          }
+        }
+      }
+    }
+  }
+}
+.footer{
+  padding: 50px 0 100px;
+  background: $black;
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__copyright{
+    color:$white;
+    font-size: $font-normal;
+    font-size: 12px;
+    &-top{
+      display: flex;
+      align-items: center;
+      & > img{width: 27px;margin-right: 16px;}
+      a{text-decoration: underline;}
+    }    
+    small{
+      max-width: 420px;
+      font-size: 9px;
+      letter-spacing: -0.01;
+      opacity: .6;
+      display: block;
+      padding-left: 43px;
+    }
+  }
+  &__capitan{
+    color:$white;
+    font-size: $font-normal;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 36px;
+    a{margin-left: 10px;}
+  }
+  a{
+    transition:$curve 0.4s;
+    &:hover{
+      color: $red;
+    }
+  }
+  @include respond-to('tablet'){
+    padding: 30px 0 50px;
+    .container{
+      flex-direction: column;
+    }
+    &__copyright{
+
+      &-top{
+        display: block;
+        text-align: center;
+        img{display: block;margin: auto;}
+      }
+      small{padding:20px 0;text-align: center;}
+    }
+    &__capitan{
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+  }
+}

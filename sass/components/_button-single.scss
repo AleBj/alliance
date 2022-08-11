@@ -1,0 +1,28 @@
+@import '../variables.scss';
+@import '../util/breakpoints.scss';
+
+.button-single{
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    color:$red;
+    font-weight: 500;
+    white-space: nowrap;
+    span{
+        font-family: $font-normal;
+        color: $black;
+        transition: $curve .4s;
+    }
+    svg{
+        margin-left: 16px;
+        transition: $curve .6s;
+    }
+    &:hover{
+        span{
+            color: $red;
+        }
+        svg{
+            transform: translateX(15px);
+        }
+    }
+}
