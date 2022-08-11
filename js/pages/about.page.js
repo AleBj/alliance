@@ -78,6 +78,8 @@ export default class About extends Page {
   }
   pageReady() {
     super.pageReady();
+    let video = document.querySelector('.heroAbout__image--video')
+    video.play()
   }
   rotator(){
     const words = document.querySelectorAll('.innovation__title > strong')

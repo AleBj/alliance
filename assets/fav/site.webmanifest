@@ -1,6 +1,6 @@
 {
-    "name": "GBV",
-    "short_name": "GBV",
+    "name": "Alliance",
+    "short_name": "Alliance",
     "icons": [
         {
             "src": "/assets/fav/android-chrome-192x192.png",
@@ -16,12 +16,6 @@
             "src": "/assets/fav/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
-        },
-        {
-            "src": "/assets/fav/maskable-icon.png",
-            "sizes": "196x196",
-            "type": "image/png",
-            "purpose": "any maskable"
         }
     ],
     "theme_color": "#FFFFFF",

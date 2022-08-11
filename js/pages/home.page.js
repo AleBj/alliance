@@ -23,9 +23,6 @@ export default class Home extends Page {
     
     new Slider(document.querySelector('.hero-slider'))
 
-   
-
-
   }
   pageReady() {
     super.pageReady();;
